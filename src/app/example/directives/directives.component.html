@@ -1,0 +1,14 @@
+<div class="directives-container">
+  <h3>指令Demo</h3>
+  <div class="dropdown-container"
+       (click)="handleClick()"
+       appClickOutside
+       name="指令宿主"
+       [greet]="'你好指令'"
+       (clickOutside)="clickOutside()">
+    {{value}}
+    <ul class="list" *ngIf="showDropDown">
+      <li (click)="selectValue(option)" *ngFor="let option of options">{{option.label}}</li>
+    </ul>
+  </div>
+</div>

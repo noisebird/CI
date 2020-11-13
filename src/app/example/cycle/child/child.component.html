@@ -1,0 +1,33 @@
+
+<div>
+  <h3>属性绑定</h3>
+  <img [src]="imagePath">
+  <img src="{{imagePath}}">
+
+  <div>名字：{{name}}</div>
+  <input [(ngModel)]="description" (ngModelChange)="onChange()">
+</div>
+
+
+<div class="event-container">
+  <h3>事件绑定</h3>
+  <div (click)="clickBtn()">{{'我是子组件'}}</div>
+  <div on-click="clickBtn()">{{'我是子组件1'}}</div>
+</div>
+
+
+<div class="dynamic-style-container">
+  <h3>动态样式</h3>
+  <div class="switch-color-btn" (click)="changeColor()">改变颜色</div>
+  <div [ngClass]="isBlue && 'blue'">我是带有颜色的文字</div>
+  <div [ngClass]="{ blue: isBlue }">我是带有颜色的文字</div>
+  <div [class.blue]="isBlue">我是带有颜色的文字</div>
+
+  <div [ngStyle]="isBlue && { color: 'blue' }">我是带有颜色的文字</div>
+  <div [ngStyle]="isBlue && { color: 'blue', 'font-size.px': 20 }">我是带有颜色的文字</div>
+</div>
+
+<div class="communication-container">
+  <h3>子组件向父组件传递数据</h3>
+  <div (click)="emitValue()">子组件传递数据到父组件</div>
+</div>
