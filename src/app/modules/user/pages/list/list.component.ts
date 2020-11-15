@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { UserService } from '../../../../common/services/user.service';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService, @Inject('UserService1') private userService1: UserService) { }
 
   ngOnInit() {
+    console.log(this.userService.getUserInfo(), 'user info ......');
+    console.log(this.userService1.getUserInfo(), 'user info1 ......');
   }
 
 }

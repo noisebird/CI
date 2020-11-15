@@ -7,6 +7,8 @@ import { PipeComponent } from './pages/pipe/pipe.component';
 import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { DirectivesComponent } from './pages/driectives/directives.component';
 import { ExampleRoutingModule } from './example-routing.module';
+import { InjectorLevelComponent } from './pages/injector-level/injector-level.component';
+import { InjectLevelService } from './services/inject-level.service';
 
 
 
@@ -17,11 +19,15 @@ import { ExampleRoutingModule } from './example-routing.module';
     FormatterMoneyPipe,
     PipeComponent,
     ClickOutsideDirective,
-    DirectivesComponent
+    DirectivesComponent,
+    InjectorLevelComponent
   ],
   imports: [
     CommonModule,
     ExampleRoutingModule
+  ],
+  providers: [
+    // { provide: InjectLevelService, useValue: new InjectLevelService('懒加载模块注入器')}
   ]
 })
 export class ExampleModule { }

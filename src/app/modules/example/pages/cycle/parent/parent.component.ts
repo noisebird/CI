@@ -8,15 +8,18 @@ import {
   OnDestroy,
   OnInit, SimpleChanges
 } from '@angular/core';
+import { UserService } from '../../../../../common/services/user.service';
+import { InjectLevelService } from '../../../services/inject-level.service';
 
 @Component({
   selector: 'app-parent',
   templateUrl: './parent.component.html',
-  styleUrls: ['./parent.component.less']
+  styleUrls: ['./parent.component.less'],
+  // providers: [{ provide: InjectLevelService, useValue: new InjectLevelService('父组件注入器')}]
 })
 export class ParentComponent implements OnInit, DoCheck, OnChanges, OnDestroy, AfterViewChecked,
   AfterViewInit, AfterContentInit, AfterContentChecked {
-  constructor() {
+  constructor(private userService: UserService) {
     console.log('parent constructor.......');
   }
 
@@ -27,6 +30,10 @@ export class ParentComponent implements OnInit, DoCheck, OnChanges, OnDestroy, A
 
   ngOnInit() {
     console.log('parent onInit.....');
+    this.userService.fetchUserInfo().subscribe((data) => {
+      console.log(data);
+    });
+
   }
 
   ngDoCheck(): void {
