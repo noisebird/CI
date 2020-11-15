@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LazyLoadGuard } from './modules/user/guards/lazy-load.guard';
 
 
 const routes: Routes = [
   {
 
     path: 'order',
+    canLoad: [LazyLoadGuard],
     loadChildren: () => import('./modules/order/order.module').then(m => m.OrderModule)
   },
   {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-detail',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
+    // 获取路径参数
+    this.route.params.subscribe(params => {
+      console.log(params, 'get params......');
+    });
+
+    // 获取 query 参数
+    this.route.queryParams.subscribe(params => {
+      console.log(params, 'get query params......');
+    });
+
+    // 获取 data 参数
+    this.route.data.subscribe(data => {
+      console.log(data, 'get data params......');
+    });
   }
 
 }
