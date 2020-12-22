@@ -18,7 +18,7 @@ export class UserService {
       email: '728212312@qq.com',
       age: 2,
       gender: '男'
-    }
+    };
     return of(userInfo);
   }
 

@@ -18,7 +18,7 @@ import {
   styleUrls: ['./child.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ChildComponent implements OnInit, DoCheck, OnChanges, OnDestroy, AfterViewChecked,
+export class ChildComponent implements OnInit, OnChanges, OnDestroy, AfterViewChecked,
   AfterViewInit, AfterContentInit, AfterContentChecked {
   @Input() name = '';
 
@@ -42,9 +42,9 @@ export class ChildComponent implements OnInit, DoCheck, OnChanges, OnDestroy, Af
     console.log('child onInit.....');
   }
 
-  ngDoCheck(): void {
-    console.log('child doCheck.....');
-  }
+  // ngDoCheck(): void {
+  //   console.log('child doCheck.....');
+  // }
 
   ngAfterContentInit(): void {
     console.log('child contentInit.....');

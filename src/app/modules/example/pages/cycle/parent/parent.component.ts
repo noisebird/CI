@@ -15,7 +15,7 @@ import { UserService } from '../../../../../common/services/user.service';
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.less']
 })
-export class ParentComponent implements OnInit, DoCheck, OnChanges, OnDestroy, AfterViewChecked,
+export class ParentComponent implements OnInit, OnChanges, OnDestroy, AfterViewChecked,
   AfterViewInit, AfterContentInit, AfterContentChecked {
   constructor(private userService: UserService) {
     console.log('parent constructor.......');
@@ -34,9 +34,9 @@ export class ParentComponent implements OnInit, DoCheck, OnChanges, OnDestroy, A
 
   }
 
-  ngDoCheck(): void {
-    console.log('parent doCheck.....');
-  }
+  // ngDoCheck(): void {
+  //   console.log('parent doCheck.....');
+  // }
 
 
   ngAfterContentChecked(): void {
