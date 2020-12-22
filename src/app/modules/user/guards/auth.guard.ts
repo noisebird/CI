@@ -12,6 +12,7 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     // return UrlTree对象
     // const value = this.router.createUrlTree(['/example/parent']);
-    return of(true);
+    // return value;
+    return new Promise((resolve) => resolve(true));
   }
 }

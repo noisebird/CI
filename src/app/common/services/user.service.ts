@@ -8,7 +8,8 @@ import { UserInfo } from '../models/user';
 export class UserService {
 
   userInfo: UserInfo;
-  constructor() { }
+  constructor() {
+  }
 
 
   fetchUserInfo() {

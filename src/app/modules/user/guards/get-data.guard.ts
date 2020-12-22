@@ -9,7 +9,9 @@ export class GetDataResolve implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
     route.data = { ...route.data, isShow: false };
-    return { name: '赵七', age: 12 };
+    return new Promise((resolve, reject) => {
+      setTimeout(() => resolve({ name: '赵七', age: 12 }), 1000);
+    });
   }
 
 }

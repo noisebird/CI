@@ -7,17 +7,21 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './common/services/user.service';
 import { InjectLevelService } from './modules/example/services/inject-level.service';
+import { PageNotFoundComponent } from './common/components/page-not-found/page-not-found.component';
+import { SharedModule } from './modules/shared/shared.module';
 // import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule.forRoot()
   ],
   providers: [
     { provide: UserService, useClass: UserService },

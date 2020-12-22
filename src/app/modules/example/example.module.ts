@@ -9,6 +9,7 @@ import { DirectivesComponent } from './pages/driectives/directives.component';
 import { ExampleRoutingModule } from './example-routing.module';
 import { InjectorLevelComponent } from './pages/injector-level/injector-level.component';
 import { InjectLevelService } from './services/inject-level.service';
+import { InjectorLevelChildComponent } from './pages/injector-level/injector-level-child/injector-level-child.component';
 
 
 
@@ -20,14 +21,15 @@ import { InjectLevelService } from './services/inject-level.service';
     PipeComponent,
     ClickOutsideDirective,
     DirectivesComponent,
-    InjectorLevelComponent
+    InjectorLevelComponent,
+    InjectorLevelChildComponent
   ],
   imports: [
     CommonModule,
     ExampleRoutingModule
   ],
   providers: [
-    // { provide: InjectLevelService, useValue: new InjectLevelService('懒加载模块注入器')}
+    { provide: InjectLevelService, useValue: new InjectLevelService('懒加载模块注入器')}
   ]
 })
 export class ExampleModule { }

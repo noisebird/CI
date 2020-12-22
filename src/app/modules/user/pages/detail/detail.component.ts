@@ -26,6 +26,7 @@ export class DetailComponent implements OnInit {
     this.route.data.subscribe(data => {
       console.log(data, 'get data params......');
     });
+    console.log(1111);
   }
 
 }

@@ -14,6 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'list',
+    pathMatch: 'full',
     component: ListComponent,
     canDeactivate: [LeaveGuard]
   },

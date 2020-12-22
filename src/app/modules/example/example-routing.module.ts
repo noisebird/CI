@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ParentComponent } from './pages/cycle/parent/parent.component';
 import { DirectivesComponent } from './pages/driectives/directives.component';
 import { PipeComponent } from './pages/pipe/pipe.component';
+import { InjectorLevelComponent } from './pages/injector-level/injector-level.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'pipe',
     component: PipeComponent
+  },
+  {
+    path: 'injector',
+    component: InjectorLevelComponent
   }
 ];
 
